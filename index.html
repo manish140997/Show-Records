@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salesforce Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .avatar {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .info {
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
+      opacity: 0.95;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.1);
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Salesforce Contacts</h1>
+    <p>Live Salesforce Record Showcase (Static Version)</p>
+  </header>
+
+  <div class="container" id="recordContainer">
+    <!-- JS will populate records here -->
+  </div>
+
+  <footer>
+    &copy; 2025 Your Company. Powered by Salesforce.
+  </footer>
+
+  <script>
+    const records = [
+      {
+        name: 'Sophie Turner',
+        email: 'sophie.turner@trailblazer.com',
+        phone: '+1 (555) 111-2233',
+        account: 'Quantum Leap',
+        image: 'https://source.unsplash.com/280x180/?portrait,woman'
+      },
+      {
+        name: 'Arjun Mehta',
+        email: 'arjun.mehta@acme.com',
+        phone: '+91 98765 43210',
+        account: 'Acme Industries',
+        image: 'https://source.unsplash.com/280x180/?portrait,man'
+      },
+      {
+        name: 'Clara Diaz',
+        email: 'clara.diaz@skyline.io',
+        phone: '+44 7700 900123',
+        account: 'Skyline Global',
+        image: 'https://source.unsplash.com/280x180/?face,female'
+      },
+      {
+        name: 'Leo Chang',
+        email: 'leo.chang@neuronet.com',
+        phone: '+61 400 555 333',
+        account: 'NeuroNet Labs',
+        image: 'https://source.unsplash.com/280x180/?man,business'
+      }
+    ];
+
+    const container = document.getElementById('recordContainer');
+
+    records.forEach(record => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img class="avatar" src="${record.image}" alt="${record.name}" />
+        <div class="name">${record.name}</div>
+        <div class="info"><strong>Email:</strong> ${record.email}</div>
+        <div class="info"><strong>Phone:</strong> ${record.phone}</div>
+        <div class="info"><strong>Account:</strong> ${record.account}</div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
