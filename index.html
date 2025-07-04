@@ -152,6 +152,27 @@
       container.appendChild(card);
     });
   </script>
+<!-- Adding the embeded code from SF
+   -->
+  <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DgK000004e11V',
+				'M_C_Show_Records1',
+				'https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCShowRecords1751611291757',
+				{
+					scrt2URL: 'https://orgfarm-cb16ec83ee-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-cb16ec83ee-dev-ed.develop.my.site.com/ESWMCShowRecords1751611291757/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 </body>
 </html>
