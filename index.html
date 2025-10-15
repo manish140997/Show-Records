@@ -153,7 +153,6 @@
     });
   </script>
 <!-- Adding the embeded code from SF
-   -->
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
@@ -173,7 +172,27 @@
 	};
 </script>
 <script type='text/javascript' src='https://orgfarm-4f5b25f028-dev-ed.develop.my.site.com/ESWESShowRecord21751626844694/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+-->
 
+	<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00Dg5000000Cf19',
+				'PIPDemo',
+				'https://orgfarm-d8a6fca7f8-dev-ed.develop.my.site.com/ESWPIPDemo1760518632577',
+				{
+					scrt2URL: 'https://orgfarm-d8a6fca7f8-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-d8a6fca7f8-dev-ed.develop.my.site.com/ESWPIPDemo1760518632577/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
 
 </body>
